@@ -94,5 +94,16 @@ export default class SesionsController {
     }
   }
 
+  /* public async setInvitado({ response, request }: HttpContextContract){
+    try{
+      await Partida.updateOne({_id: request.input('id')}, 
+        {
+          invitado: request.input('invitado')
+      })
+
+      response.ok({message: "Actualizacion correcto"})
+    }
+  } */
+
   public async destroy({}: HttpContextContract) {}
 }
