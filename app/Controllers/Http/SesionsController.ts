@@ -63,5 +63,36 @@ export default class SesionsController {
     }
   }
 
+  public async ActGyE({ response, request, params }: HttpContextContract){
+    try{
+      await Partida.updateOne({_id: params.id}, 
+        {ganador: request.input('ganador'), 
+        estado: request.input('estado')
+      })
+
+      response.ok({message: "Actualizacion correcto"})
+    }
+    catch(error)
+    {
+      response.badRequest({message: "Ocurrio un error"})
+    }
+  }
+
+  public async ActInvitado({ response, request, params }: HttpContextContract)
+  {
+    try{
+      await Partida.updateOne({_id: params.id}, 
+        {
+          invitado: request.input('invitado')
+      })
+
+      response.ok({message: "Actualizacion correcto"})
+    }
+    catch(error)
+    {
+      response.badRequest({message: "Ocurrio un error"})
+    }
+  }
+
   public async destroy({}: HttpContextContract) {}
 }

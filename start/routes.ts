@@ -28,3 +28,7 @@ Route.post('login', 'AuthController.login')
 Route.post('register', 'AuthController.register')
 
 Route.resource('sesiones', 'SesionsController')
+
+Route.put('ActGyE', 'SesionsController.ActGyE')
+
+Route.put('ActInvitado', 'SesionsController.ActInvitado')
